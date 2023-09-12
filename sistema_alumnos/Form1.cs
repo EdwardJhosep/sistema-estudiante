@@ -7,8 +7,11 @@ namespace sistema_alumnos
     {
         public Form1()
         {
-            InitializeComponent();
-            //Asocia el evento FormClosing con el método Form1_FormClosing
+            InitializeComponent();// Inicializa los componentes del formulario.
+
+
+            // Asocia el evento FormClosing con el método Form1_FormClosing.
+            this.FormClosing += Form1_FormClosing;
         }
 
         // Método para llenar el ComboBox comboBox1 con los niveles
@@ -90,6 +93,16 @@ namespace sistema_alumnos
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)//COMBO DE SELECION SECCION
         {
+        }
+
+        //Este método se ejecutará cuando el usuario intente cerrar
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Muestra un cuadro de diálogo de confirmación.
+            if (MessageBox.Show("¿Estás seguro que quieres salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true; // Cancela el cierre del formulario si el usuario elige "No".
+            }
         }
     }
 }
