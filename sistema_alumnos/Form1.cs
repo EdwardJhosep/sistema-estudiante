@@ -74,10 +74,22 @@ namespace sistema_alumnos
         // Método para llenar el ComboBox comboBox3 con las secciones basadas en el grado
         private void LlenarComboBox3Secciones(string grado)
         {
+            comboBox3.Items.Clear(); // Limpiar el ComboBox de secciones
 
+            if (grado != null)
+            {
+                // Agregar secciones comunes a todos los grados
+                comboBox3.Items.Add("Sección A");
+                comboBox3.Items.Add("Sección B");
+                comboBox3.Items.Add("Sección C");
+                comboBox3.Items.Add("Sección E");
+                comboBox3.Items.Add("Sección D");
+
+
+            }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)//GROPUBOX
+            private void groupBox1_Enter(object sender, EventArgs e)//GROPUBOX
         {
 
         }
@@ -126,7 +138,15 @@ namespace sistema_alumnos
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)//CONBO SELECTOR DE NIVEL
-        {    
+        {    // Obtener la selección actual del ComboBox de niveles
+            string selectedNivel = comboBox1.SelectedItem.ToString();
+
+            // Llenar el ComboBox de grados basado en el nivel seleccionado
+            LlenarComboBox2Grados(selectedNivel);
+
+            // Deshabilitar el ComboBox de secciones hasta que se seleccione un grado
+            comboBox3.Enabled = false;
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)//COMBO SELECTOR GRADO 
