@@ -35,13 +35,44 @@ namespace sistema_alumnos
         // Método para llenar el ComboBox comboBox2 con los grados basados en el nivel
         private void LlenarComboBox2Grados(string nivel)
         {
-            
+            comboBox2.Items.Clear(); // Limpiar el ComboBox de grados
+
+            if (nivel == "Inicial")
+            {
+                comboBox2.Items.Add("3 años");
+                comboBox2.Items.Add("4 años");
+                comboBox2.Items.Add("5 años");
+            }
+            else if (nivel == "Primaria")
+            {
+                comboBox2.Items.Add("Primero");
+                comboBox2.Items.Add("Segundo");
+                comboBox2.Items.Add("Tercero");
+                comboBox2.Items.Add("Cuarto");
+                comboBox2.Items.Add("Quinto");
+                comboBox2.Items.Add("Sexto");
+            }
+            else if (nivel == "Secundaria")
+            {
+                comboBox2.Items.Add("Primer año");
+                comboBox2.Items.Add("Segundo año");
+                comboBox2.Items.Add("Tercer año");
+                comboBox2.Items.Add("Cuarto año");
+                comboBox2.Items.Add("Quinto año");
+            }
+
+            // Habilitar el ComboBox de grados
+            comboBox2.Enabled = true;
+
+            // Dejar el ComboBox de grados en blanco después de cambiar las opciones
+            comboBox2.SelectedIndex = -1;
+
         }
 
-    
 
-    // Método para llenar el ComboBox comboBox3 con las secciones basadas en el grado
-    private void LlenarComboBox3Secciones(string grado)
+
+        // Método para llenar el ComboBox comboBox3 con las secciones basadas en el grado
+        private void LlenarComboBox3Secciones(string grado)
         {
 
         }
