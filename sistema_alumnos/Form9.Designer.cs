@@ -30,17 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form9));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COMPORTAMIENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PROMEDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATEMATICA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COMUNICACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INGLES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FISICA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUIMICA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ALGEBRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -54,9 +59,28 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(775, 425);
+            this.groupBox1.Size = new System.Drawing.Size(868, 476);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.USUARIO,
+            this.COMPORTAMIENTO,
+            this.MATEMATICA,
+            this.COMUNICACION,
+            this.INGLES,
+            this.FISICA,
+            this.QUIMICA,
+            this.ALGEBRA});
+            this.dataGridView1.Location = new System.Drawing.Point(16, 149);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(845, 226);
+            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button2
             // 
@@ -83,9 +107,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(623, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(725, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 149);
+            this.pictureBox1.Size = new System.Drawing.Size(137, 144);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -101,20 +125,6 @@
             this.label1.Text = "ACTUALIZAR DATOS";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.USUARIO,
-            this.COMPORTAMIENTO,
-            this.PROMEDIO});
-            this.dataGridView1.Location = new System.Drawing.Point(200, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(345, 150);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // USUARIO
             // 
             this.USUARIO.HeaderText = "USUARIO";
@@ -125,16 +135,41 @@
             this.COMPORTAMIENTO.HeaderText = "COMPORTAMIENTO";
             this.COMPORTAMIENTO.Name = "COMPORTAMIENTO";
             // 
-            // PROMEDIO
+            // MATEMATICA
             // 
-            this.PROMEDIO.HeaderText = "PROMEDIO";
-            this.PROMEDIO.Name = "PROMEDIO";
+            this.MATEMATICA.HeaderText = "MATEMATICA";
+            this.MATEMATICA.Name = "MATEMATICA";
+            // 
+            // COMUNICACION
+            // 
+            this.COMUNICACION.HeaderText = "COMUNICACION";
+            this.COMUNICACION.Name = "COMUNICACION";
+            // 
+            // INGLES
+            // 
+            this.INGLES.HeaderText = "INGLES";
+            this.INGLES.Name = "INGLES";
+            // 
+            // FISICA
+            // 
+            this.FISICA.HeaderText = "FISICA";
+            this.FISICA.Name = "FISICA";
+            // 
+            // QUIMICA
+            // 
+            this.QUIMICA.HeaderText = "QUIMICA";
+            this.QUIMICA.Name = "QUIMICA";
+            // 
+            // ALGEBRA
+            // 
+            this.ALGEBRA.HeaderText = "ALGEBRA";
+            this.ALGEBRA.Name = "ALGEBRA";
             // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(879, 486);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -142,8 +177,8 @@
             this.Text = "Form9";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -158,6 +193,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn COMPORTAMIENTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PROMEDIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATEMATICA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COMUNICACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn INGLES;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FISICA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUIMICA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ALGEBRA;
     }
 }

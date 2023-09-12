@@ -48,9 +48,19 @@ namespace sistema_alumnos
 
         }
 
-        private void button1_Click(object sender, EventArgs e)//EXPORTAR A EXCEL
+        private void button1_Click(object sender, EventArgs e)//VER EN dataGridView1_CellContentClick
         {
             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)//Agregamos un control gráfico
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

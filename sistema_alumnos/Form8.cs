@@ -22,10 +22,7 @@ namespace sistema_alumnos
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -36,6 +33,11 @@ namespace sistema_alumnos
 
             // Opcionalmente, puedes ocultar el formulario actual (Form1) si lo deseas.
             this.Hide();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)//Agregamos un control gráfico
+        {
+
         }
     }
 }
