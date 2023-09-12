@@ -150,12 +150,19 @@ namespace sistema_alumnos
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)//COMBO SELECTOR GRADO 
-        {
+        {            // Obtener la selección actual del ComboBox de grados
+            string selectedGrado = comboBox2.SelectedItem.ToString();
+
+            // Llenar el ComboBox de secciones basado en el grado seleccionado
+            LlenarComboBox3Secciones(selectedGrado);
         }
 
 
+    
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)//COMBO DE SELECION SECCION
+
+
+    private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)//COMBO DE SELECION SECCION
         {
 
         }
