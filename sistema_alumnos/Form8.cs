@@ -17,14 +17,14 @@ namespace sistema_alumnos
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)//texto titulo
         {
 
         }
 
     
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//buton volver
         {
             Form7 registerForm = new Form7();
 
@@ -36,6 +36,16 @@ namespace sistema_alumnos
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)//Agregamos un control gráfico
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)//img
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)//buton eliminar
         {
 
         }

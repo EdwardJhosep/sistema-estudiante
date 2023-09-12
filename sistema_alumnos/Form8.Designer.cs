@@ -73,6 +73,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button2
             // 
@@ -94,6 +95,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "ELIMINAR";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -108,6 +110,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -121,6 +125,7 @@
             this.ALGEBRA});
             this.dataGridView1.Location = new System.Drawing.Point(6, 172);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(840, 262);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -129,41 +134,49 @@
             // 
             this.USUARIO.HeaderText = "USUARIO";
             this.USUARIO.Name = "USUARIO";
+            this.USUARIO.ReadOnly = true;
             // 
             // COMPORTAMIENTO
             // 
             this.COMPORTAMIENTO.HeaderText = "COMPORTAMIENTO";
             this.COMPORTAMIENTO.Name = "COMPORTAMIENTO";
+            this.COMPORTAMIENTO.ReadOnly = true;
             // 
             // MATEMATICA
             // 
             this.MATEMATICA.HeaderText = "MATEMATICA";
             this.MATEMATICA.Name = "MATEMATICA";
+            this.MATEMATICA.ReadOnly = true;
             // 
             // COMUNICACION
             // 
             this.COMUNICACION.HeaderText = "COMUNICACION";
             this.COMUNICACION.Name = "COMUNICACION";
+            this.COMUNICACION.ReadOnly = true;
             // 
             // INGLES
             // 
             this.INGLES.HeaderText = "INGLES";
             this.INGLES.Name = "INGLES";
+            this.INGLES.ReadOnly = true;
             // 
             // FISICA
             // 
             this.FISICA.HeaderText = "FISICA";
             this.FISICA.Name = "FISICA";
+            this.FISICA.ReadOnly = true;
             // 
             // QUIMICA
             // 
             this.QUIMICA.HeaderText = "QUIMICA";
             this.QUIMICA.Name = "QUIMICA";
+            this.QUIMICA.ReadOnly = true;
             // 
             // ALGEBRA
             // 
             this.ALGEBRA.HeaderText = "ALGEBRA";
             this.ALGEBRA.Name = "ALGEBRA";
+            this.ALGEBRA.ReadOnly = true;
             // 
             // Form8
             // 
