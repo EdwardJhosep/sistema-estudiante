@@ -8,27 +8,25 @@ namespace sistema_alumnos
         public Form1()
         {
             InitializeComponent();
-
-         
-          
+            //Asocia el evento FormClosing con el método Form1_FormClosing
         }
 
         // Método para llenar el ComboBox comboBox1 con los niveles
         private void LlenarComboBox1Niveles()
         {
-          
+
         }
 
         // Método para llenar el ComboBox comboBox2 con los grados basados en el nivel
         private void LlenarComboBox2Grados(string nivel)
         {
-           
+
         }
 
         // Método para llenar el ComboBox comboBox3 con las secciones basadas en el grado
         private void LlenarComboBox3Secciones(string grado)
         {
-           
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)//GROPUBOX
@@ -55,8 +53,8 @@ namespace sistema_alumnos
 
         }
 
-       
-       
+
+
         private void button2_Click(object sender, EventArgs e)//BOTON INCIAR SESION
         {
             Form3 registerForm = new Form3();
@@ -80,19 +78,18 @@ namespace sistema_alumnos
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)//CONBO SELECTOR DE NIVEL
-        {   
+        {
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)//COMBO SELECTOR GRADO 
         {
-            
+
         }
 
 
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)//COMBO DE SELECION SECCION
         {
-
         }
     }
 }

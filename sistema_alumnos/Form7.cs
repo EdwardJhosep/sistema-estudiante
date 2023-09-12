@@ -41,13 +41,13 @@ namespace sistema_alumnos
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Fomr1 registerForm = new Fomr1();
+            Form1 registerForm = new Form1();
 
             // Mostrar el formulario RegisterForm.
             registerForm.Show();
 
             // Opcionalmente, puedes ocultar el formulario actual (Form1) si lo deseas.
-            this.Hide();                
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
