@@ -63,7 +63,7 @@ namespace sistema_alumnos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form10 registerForm = new Form10();
+            Form6 registerForm = new Form6();
 
             // Mostrar el formulario RegisterForm.
             registerForm.Show();

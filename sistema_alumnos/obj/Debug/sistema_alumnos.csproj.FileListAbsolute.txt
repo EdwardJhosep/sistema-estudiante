@@ -53,7 +53,6 @@ C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\bin\Debug\sist
 C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.csproj.AssemblyReference.cache
 C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.csproj.ResolveComReference.cache
 C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.Form1.resources
-C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.Form10.resources
 C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.Form2.resources
 C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.Form3.resources
 C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.Form4.resources
@@ -68,3 +67,4 @@ C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sist
 C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.application
 C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.exe
 C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.pdb
+C:\Users\Administrador\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.Form6.resources
