@@ -37,5 +37,7 @@ namespace sistema_alumnos
             // Opcionalmente, puedes ocultar el formulario actual (Form1) si lo deseas.
             this.Hide();
         }
+
+
     }
 }

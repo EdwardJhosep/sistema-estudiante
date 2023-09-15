@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="sistema_alumnos.exe" size="1399824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="sistema_alumnos.exe" size="1396752">
       <assemblyIdentity name="sistema_alumnos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>l5tMp4YbcpNWmOXCSzRLJAzj3/kwaW7fyAATT4uDTww=</dsig:DigestValue>
+        <dsig:DigestValue>opW2WC/T2F0HkMnm8ZRPREwjhVTgR6X8x1+r5k5seLM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

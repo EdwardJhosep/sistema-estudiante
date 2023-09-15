@@ -5,9 +5,9 @@ using Microsoft.Office.Interop.Excel;
 
 namespace sistema_alumnos
 {
-    public partial class Form6 : Form
+    public partial class Form10 : Form
     {
-        public Form6()
+        public Form10()
         {
             InitializeComponent();
         }

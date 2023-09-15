@@ -45,7 +45,7 @@ namespace sistema_alumnos
 
         }
 
-        private void button1_Click(object sender, EventArgs e)//buton eliminar
+        private void button1_Click(object sender, EventArgs e)//buton GUARDAR
         {
 
         }
