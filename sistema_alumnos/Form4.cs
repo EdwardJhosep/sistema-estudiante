@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,13 +31,54 @@ namespace sistema_alumnos
 
         private void button1_Click(object sender, EventArgs e)//boton ingresar
         {
-            Form7 registerForm = new Form7();
+            string usuario = textBox1.Text;
+            string contraseña = textBox2.Text;
 
-            // Mostrar el formulario RegisterForm.
-            registerForm.Show();
+            // Verifica si los campos obligatorios están vacíos.
+            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contraseña))
+            {
+                MessageBox.Show("Por favor, completa todos los campos.");
+                return; // No continúes si faltan campos obligatorios.
+            }
 
-            // Opcionalmente, puedes ocultar el formulario actual (Form1) si lo deseas.
-            this.Hide();
+            // Define la cadena de conexión a la base de datos SQL Server.
+            string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Aquí puedes construir tu consulta SQL para verificar el usuario y la contraseña en la tabla "Administradores".
+                    string query = "SELECT COUNT(*) FROM Administradores WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Define los parámetros de la consulta.
+                        command.Parameters.AddWithValue("@Usuario", usuario);
+                        command.Parameters.AddWithValue("@Contraseña", contraseña);
+
+                        int userCount = (int)command.ExecuteScalar();
+
+                        if (userCount > 0)
+                        {
+                            // Las credenciales son válidas; puedes redirigir al usuario a la página de bienvenida.
+                            Form7 form7 = new Form7();
+                            form7.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuario o contraseña incorrectos.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)//titulo
@@ -65,6 +107,11 @@ namespace sistema_alumnos
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)//contraseña
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
