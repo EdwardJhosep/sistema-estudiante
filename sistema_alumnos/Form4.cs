@@ -17,7 +17,7 @@ namespace sistema_alumnos
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//boton volver
         {
             Form1 registerForm = new Form1();
 
@@ -28,7 +28,7 @@ namespace sistema_alumnos
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//boton ingresar
         {
             Form7 registerForm = new Form7();
 
@@ -39,7 +39,32 @@ namespace sistema_alumnos
             this.Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)//titulo
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)//img
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)//text usuario
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)//text contraseña
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)//usuario
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)//contraseña
         {
 
         }
