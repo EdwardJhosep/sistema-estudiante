@@ -51,5 +51,10 @@ namespace sistema_alumnos
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
