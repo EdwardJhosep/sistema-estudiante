@@ -32,21 +32,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMPORTAMIENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MATEMATICA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMUNICACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INGLES = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FISICA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUIMICA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ALGEBRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.INICIAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,9 +56,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(17, 16);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1164, 588);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -77,7 +68,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.button3.Location = new System.Drawing.Point(969, 535);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(159, 46);
             this.button3.TabIndex = 11;
@@ -91,18 +82,8 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.USUARIO,
-            this.COMPORTAMIENTO,
-            this.MATEMATICA,
-            this.COMUNICACION,
-            this.INGLES,
-            this.FISICA,
-            this.QUIMICA,
-            this.ALGEBRA,
-            this.INICIAL});
             this.dataGridView1.Location = new System.Drawing.Point(0, 193);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -110,75 +91,11 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // USUARIO
-            // 
-            this.USUARIO.HeaderText = "USUARIO";
-            this.USUARIO.MinimumWidth = 6;
-            this.USUARIO.Name = "USUARIO";
-            this.USUARIO.ReadOnly = true;
-            this.USUARIO.Width = 125;
-            // 
-            // COMPORTAMIENTO
-            // 
-            this.COMPORTAMIENTO.HeaderText = "COMPORTAMIENTO";
-            this.COMPORTAMIENTO.MinimumWidth = 6;
-            this.COMPORTAMIENTO.Name = "COMPORTAMIENTO";
-            this.COMPORTAMIENTO.ReadOnly = true;
-            this.COMPORTAMIENTO.Width = 125;
-            // 
-            // MATEMATICA
-            // 
-            this.MATEMATICA.HeaderText = "MATEMATICA";
-            this.MATEMATICA.MinimumWidth = 6;
-            this.MATEMATICA.Name = "MATEMATICA";
-            this.MATEMATICA.ReadOnly = true;
-            this.MATEMATICA.Width = 125;
-            // 
-            // COMUNICACION
-            // 
-            this.COMUNICACION.HeaderText = "COMUNICACION";
-            this.COMUNICACION.MinimumWidth = 6;
-            this.COMUNICACION.Name = "COMUNICACION";
-            this.COMUNICACION.ReadOnly = true;
-            this.COMUNICACION.Width = 125;
-            // 
-            // INGLES
-            // 
-            this.INGLES.HeaderText = "INGLES";
-            this.INGLES.MinimumWidth = 6;
-            this.INGLES.Name = "INGLES";
-            this.INGLES.ReadOnly = true;
-            this.INGLES.Width = 125;
-            // 
-            // FISICA
-            // 
-            this.FISICA.HeaderText = "FISICA";
-            this.FISICA.MinimumWidth = 6;
-            this.FISICA.Name = "FISICA";
-            this.FISICA.ReadOnly = true;
-            this.FISICA.Width = 125;
-            // 
-            // QUIMICA
-            // 
-            this.QUIMICA.HeaderText = "QUIMICA";
-            this.QUIMICA.MinimumWidth = 6;
-            this.QUIMICA.Name = "QUIMICA";
-            this.QUIMICA.ReadOnly = true;
-            this.QUIMICA.Width = 125;
-            // 
-            // ALGEBRA
-            // 
-            this.ALGEBRA.HeaderText = "ALGEBRA";
-            this.ALGEBRA.MinimumWidth = 6;
-            this.ALGEBRA.Name = "ALGEBRA";
-            this.ALGEBRA.ReadOnly = true;
-            this.ALGEBRA.Width = 125;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(903, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(123, 114);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -190,7 +107,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.button2.Location = new System.Drawing.Point(17, 535);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 46);
             this.button2.TabIndex = 4;
@@ -202,7 +119,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(435, 139);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 46);
             this.button1.TabIndex = 3;
@@ -213,7 +130,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(479, 90);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(225, 22);
             this.textBox1.TabIndex = 2;
@@ -243,14 +160,6 @@
             this.label1.Text = "VER DATOS ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // INICIAL
-            // 
-            this.INICIAL.HeaderText = "INICIAL";
-            this.INICIAL.MinimumWidth = 6;
-            this.INICIAL.Name = "INICIAL";
-            this.INICIAL.ReadOnly = true;
-            this.INICIAL.Width = 125;
-            // 
             // Form10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,7 +167,7 @@
             this.ClientSize = new System.Drawing.Size(1181, 599);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form10";
             this.Text = "Form10";
@@ -280,15 +189,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn USUARIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMPORTAMIENTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MATEMATICA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMUNICACION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn INGLES;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FISICA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUIMICA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ALGEBRA;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn INICIAL;
     }
 }
