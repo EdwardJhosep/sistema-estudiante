@@ -63,9 +63,18 @@ namespace sistema_alumnos
 
                         if (adminCount > 0)
                         {
-                            // Las credenciales son válidas; puedes redirigir al administrador a la página de bienvenida.
-                            Form7 form7 = new Form7();
-                            form7.Show();
+                            if (dni == "2001")
+                            {
+                                // El DNI es igual a 2001; redirige a Form6.
+                                Form7 form7 = new Form7();
+                                form7.Show();
+                            }
+                            else
+                            {
+                                // Las credenciales son válidas; puedes redirigir al administrador a la página de bienvenida (Form7).
+                                Form6 form6 = new Form6();
+                                form6.Show();
+                            }
                             this.Hide();
                         }
                         else
@@ -80,6 +89,7 @@ namespace sistema_alumnos
                 }
             }
         }
+
 
         private void label1_Click(object sender, EventArgs e)//titulo
         {

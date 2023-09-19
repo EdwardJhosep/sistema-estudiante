@@ -91,3 +91,4 @@ C:\Users\juana\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alum
 C:\Users\juana\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.application
 C:\Users\juana\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.exe
 C:\Users\juana\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.pdb
+C:\Users\juana\Desktop\sistema-estudiante\sistema_alumnos\obj\Debug\sistema_alumnos.Form6.resources
