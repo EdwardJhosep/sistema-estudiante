@@ -18,7 +18,7 @@ namespace sistema_alumnos
         }
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)//RESIVE USUARIO
+        private void textBox1_TextChanged(object sender, EventArgs e)//RESIVE DNI
         {
 
         }
@@ -33,17 +33,17 @@ namespace sistema_alumnos
 
         }
 
-        private void label2_Click(object sender, EventArgs e)//USUARIO TEXT
+        private void label2_Click(object sender, EventArgs e)//DNI TEXT
         {
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)//RESIVE CONTRASEÑA
+        private void textBox2_TextChanged(object sender, EventArgs e)//RESIVE NOMBRE
         {
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)//RESIVE CORREO
+        private void textBox3_TextChanged(object sender, EventArgs e)//RESIVE CONTRASEÑA
         {
 
         }
@@ -53,12 +53,12 @@ namespace sistema_alumnos
 
         }
 
-        private void label3_Click(object sender, EventArgs e)//CONTRASEÑA TEXT
+        private void label3_Click(object sender, EventArgs e)//NOMBRE TEXT
         {
 
         }
 
-        private void label4_Click(object sender, EventArgs e)//CORREO TEXT
+        private void label4_Click(object sender, EventArgs e)//CONTRASEÑA TEXT
         {
 
         }
@@ -77,6 +77,66 @@ namespace sistema_alumnos
 
             // Opcionalmente, puedes ocultar el formulario actual (Form1) si lo deseas.
             this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)//SESION TEXT
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)//EDAD TEXT
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)//DNI ADMINISTRADOR TEXT
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)//CORREO TEXT
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)//GRADO TEXT
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)//NIVEL TEXT
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)//RESIVE CORREO
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)//RESIVE GRADO
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)//RESIVE SESION
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)//RESIVE NIVEL
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)//RESIVE EDAD
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)//RESIVE DNI ADMINISTRADOR
+        {
+
         }
     }
 }
