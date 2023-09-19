@@ -35,10 +35,7 @@ namespace sistema_alumnos
             this.Hide();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)//Agregamos un control gráfico
-        {
-
-        }
+      
 
         private void pictureBox1_Click(object sender, EventArgs e)//img
         {
@@ -46,6 +43,11 @@ namespace sistema_alumnos
         }
 
         private void button1_Click(object sender, EventArgs e)//buton GUARDAR
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

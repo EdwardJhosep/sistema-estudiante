@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace sistema_alumnos
 {
     public partial class Form5 : Form
     {
-        private string nombreUsuario; // Campo para almacenar el nombre de usuario
+        private string nombreUsuario;
         private string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
 
         public Form5()
@@ -22,12 +15,11 @@ namespace sistema_alumnos
             InitializeComponent();
         }
 
-        // Constructor que acepta el nombre de usuario
         public Form5(string usuario) : this()
         {
             this.nombreUsuario = usuario;
         }
-       
+
 
 
 
@@ -37,33 +29,28 @@ namespace sistema_alumnos
         }
 
         private void Form5_Load(object sender, EventArgs e)
-        {
-            // Define la consulta SQL con el parámetro @nombreUsuario
-            string query = "SELECT Matematica, Comunicacion, Ingles, Fisica, Quimica, Algebra, Promedio_Final, Inicial " +
-                           "FROM Notas N " +
-                           "INNER JOIN Usuarios U ON N.DNI = U.DNI " +
-                           "WHERE U.DNI = @nombreUsuario";
+        { // Define the SQL query with parameters
+            string query = "SELECT Matematica, Comunicacion, Ingles, Fisica, Quimica, Algebra, Promedio_Final " +
+                           "FROM Notas " +
+                           "WHERE DNI_Alumno = @nombreUsuario";
 
-
-
-            // Create a SqlConnection and a SqlDataAdapter.
+            // Create a SqlConnection and a SqlDataAdapter
             using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-
-                // Define el parámetro @nombreUsuario
+                // Define the parameter @nombreUsuario
                 adapter.SelectCommand.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
 
-                // Create a DataTable to hold the retrieved data.
+                // Create a DataTable to hold the retrieved data
                 DataTable dataTable = new DataTable();
 
-                // Fill the DataTable with data from the database.
+                // Fill the DataTable with data from the database
                 adapter.Fill(dataTable);
 
-                // Bind the DataTable to the DataGridView.
+                // Bind the DataTable to the DataGridView
                 dataGridView1.DataSource = dataTable;
 
-                // Configura los nombres de las columnas en el DataGridView.
+                // Configure the column headers in the DataGridView
                 dataGridView1.Columns["Matematica"].HeaderText = "MATEMATICA";
                 dataGridView1.Columns["Comunicacion"].HeaderText = "COMUNICACION";
                 dataGridView1.Columns["Ingles"].HeaderText = "INGLES";
@@ -71,9 +58,10 @@ namespace sistema_alumnos
                 dataGridView1.Columns["Quimica"].HeaderText = "QUIMICA";
                 dataGridView1.Columns["Algebra"].HeaderText = "ALGEBRA";
                 dataGridView1.Columns["Promedio_Final"].HeaderText = "PROMEDIOFINAL";
-                dataGridView1.Columns["Inicial"].HeaderText = "INICIAL";
             }
         }
+    
+
     
 
 
