@@ -50,26 +50,7 @@ namespace sistema_alumnos
             this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form9 registerForm = new Form9();
 
-            // Mostrar el formulario RegisterForm.
-            registerForm.Show();
-
-            // Opcionalmente, puedes ocultar el formulario actual (Form1) si lo deseas.
-            this.Hide();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form10 registerForm = new Form10();
-
-            // Mostrar el formulario RegisterForm.
-            registerForm.Show();
-
-            // Opcionalmente, puedes ocultar el formulario actual (Form1) si lo deseas.
-            this.Hide();
-        }
+       
     }
 }
