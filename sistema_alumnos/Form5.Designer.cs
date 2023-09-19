@@ -31,13 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MATEMATICA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMUNICACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INGLES = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FISICA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUIMICA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ALGEBRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INICIAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,14 +62,6 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MATEMATICA,
-            this.COMUNICACION,
-            this.INGLES,
-            this.FISICA,
-            this.QUIMICA,
-            this.ALGEBRA,
-            this.INICIAL});
             this.dataGridView1.Location = new System.Drawing.Point(25, 182);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -85,62 +70,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(920, 298);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // MATEMATICA
-            // 
-            this.MATEMATICA.HeaderText = "MATEMATICA ";
-            this.MATEMATICA.MinimumWidth = 6;
-            this.MATEMATICA.Name = "MATEMATICA";
-            this.MATEMATICA.ReadOnly = true;
-            this.MATEMATICA.Width = 125;
-            // 
-            // COMUNICACION
-            // 
-            this.COMUNICACION.HeaderText = "COMUNICACION";
-            this.COMUNICACION.MinimumWidth = 6;
-            this.COMUNICACION.Name = "COMUNICACION";
-            this.COMUNICACION.ReadOnly = true;
-            this.COMUNICACION.Width = 125;
-            // 
-            // INGLES
-            // 
-            this.INGLES.HeaderText = "INGLES";
-            this.INGLES.MinimumWidth = 6;
-            this.INGLES.Name = "INGLES";
-            this.INGLES.ReadOnly = true;
-            this.INGLES.Width = 125;
-            // 
-            // FISICA
-            // 
-            this.FISICA.HeaderText = "FISICA";
-            this.FISICA.MinimumWidth = 6;
-            this.FISICA.Name = "FISICA";
-            this.FISICA.ReadOnly = true;
-            this.FISICA.Width = 125;
-            // 
-            // QUIMICA
-            // 
-            this.QUIMICA.HeaderText = "QUIMICA";
-            this.QUIMICA.MinimumWidth = 6;
-            this.QUIMICA.Name = "QUIMICA";
-            this.QUIMICA.ReadOnly = true;
-            this.QUIMICA.Width = 125;
-            // 
-            // ALGEBRA
-            // 
-            this.ALGEBRA.HeaderText = "ALGEBRA";
-            this.ALGEBRA.MinimumWidth = 6;
-            this.ALGEBRA.Name = "ALGEBRA";
-            this.ALGEBRA.ReadOnly = true;
-            this.ALGEBRA.Width = 125;
-            // 
-            // INICIAL
-            // 
-            this.INICIAL.HeaderText = "INICIAL";
-            this.INICIAL.MinimumWidth = 6;
-            this.INICIAL.Name = "INICIAL";
-            this.INICIAL.ReadOnly = true;
-            this.INICIAL.Width = 125;
             // 
             // button3
             // 
@@ -166,6 +95,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -177,6 +107,7 @@
             this.label1.Size = new System.Drawing.Size(276, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "BIENVENIDO";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form5
             // 
@@ -205,12 +136,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MATEMATICA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMUNICACION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn INGLES;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FISICA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUIMICA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ALGEBRA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn INICIAL;
     }
 }

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="sistema_alumnos.exe" size="1401360">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="sistema_alumnos.exe" size="1447440">
       <assemblyIdentity name="sistema_alumnos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TmdQgA+AR6TRnaYM5UAOkDEi346QsPF8qbI9sGKIDPg=</dsig:DigestValue>
+        <dsig:DigestValue>/s2ByIn/X/HRAfTQ66ZI7rFFSHxszAZZuTTgBTjJsI0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -63,13 +63,13 @@
       <dsig:DigestValue>Can6HLEof2noxXCrGfCmlcUb+1YfUX5YH3GHPPHlizs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="sistema_alumnos.exe.config" size="184">
+  <file name="sistema_alumnos.exe.config" size="533">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>X+GtgC9o18R9u9jmAWK6iKuu0WLaXTgchdPkk1MRli4=</dsig:DigestValue>
+      <dsig:DigestValue>f4SQcILkjX5ny6BR7ejvz2hdnW/g7Sa7Xl+2LJSYERk=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
