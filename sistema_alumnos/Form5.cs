@@ -38,11 +38,12 @@ namespace sistema_alumnos
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            // Define la consulta SQL con el parámetro @UsuarioEnSesion
+            // Define la consulta SQL con el parámetro @nombreUsuario
             string query = "SELECT Matematica, Comunicacion, Ingles, Fisica, Quimica, Algebra, Promedio_Final, Inicial " +
                            "FROM Notas N " +
-                           "INNER JOIN Usuarios U ON N.UsuarioID = U.ID " +
-                           "WHERE U.Usuario = @nombreUsuario"; // Cambia @UsuarioEnSesion por @nombreUsuario
+                           "INNER JOIN Usuarios U ON N.DNI = U.DNI " +
+                           "WHERE U.DNI = @nombreUsuario";
+
 
 
             // Create a SqlConnection and a SqlDataAdapter.

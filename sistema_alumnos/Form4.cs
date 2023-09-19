@@ -31,11 +31,11 @@ namespace sistema_alumnos
 
         private void button1_Click(object sender, EventArgs e)//boton ingresar
         {
-            string usuario = textBox1.Text;
+            string dni = textBox1.Text;
             string contraseña = textBox2.Text;
 
             // Verifica si los campos obligatorios están vacíos.
-            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contraseña))
+            if (string.IsNullOrWhiteSpace(dni) || string.IsNullOrWhiteSpace(contraseña))
             {
                 MessageBox.Show("Por favor, completa todos los campos.");
                 return; // No continúes si faltan campos obligatorios.
@@ -50,27 +50,27 @@ namespace sistema_alumnos
                 {
                     connection.Open();
 
-                    // Aquí puedes construir tu consulta SQL para verificar el usuario y la contraseña en la tabla "Administradores".
-                    string query = "SELECT COUNT(*) FROM Administradores WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
+                    // Consulta SQL para verificar el DNI y la contraseña en la tabla "Administradores".
+                    string query = "SELECT COUNT(*) FROM Administradores WHERE DNI = @DNI AND Contraseña = @Contraseña";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         // Define los parámetros de la consulta.
-                        command.Parameters.AddWithValue("@Usuario", usuario);
+                        command.Parameters.AddWithValue("@DNI", dni);
                         command.Parameters.AddWithValue("@Contraseña", contraseña);
 
-                        int userCount = (int)command.ExecuteScalar();
+                        int adminCount = (int)command.ExecuteScalar();
 
-                        if (userCount > 0)
+                        if (adminCount > 0)
                         {
-                            // Las credenciales son válidas; puedes redirigir al usuario a la página de bienvenida.
+                            // Las credenciales son válidas; puedes redirigir al administrador a la página de bienvenida.
                             Form7 form7 = new Form7();
                             form7.Show();
                             this.Hide();
                         }
                         else
                         {
-                            MessageBox.Show("Usuario o contraseña incorrectos.");
+                            MessageBox.Show("DNI o contraseña incorrectos.");
                         }
                     }
                 }
