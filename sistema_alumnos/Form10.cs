@@ -44,14 +44,14 @@ namespace sistema_alumnos
 
         }
 
-        private void label2_Click(object sender, EventArgs e)//TEXT USUARIO-DNI
+        private void label2_Click(object sender, EventArgs e)//TEXT ADMINITRADOR-DNI
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)//RESIVE EL USUARIO-DNI
+        private void textBox1_TextChanged(object sender, EventArgs e)//RESIVE EL ADMINISTRADOR-DNI
         {
-            DniUsuario = textBox1.Text;
+    
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,17 +67,24 @@ namespace sistema_alumnos
                         string query = "SELECT Usuarios.Nombre, Notas.Matematica, Notas.Comunicacion, Notas.Ingles, Notas.Fisica, Notas.Quimica, Notas.Algebra, Notas.Promedio_Final " +
                                        "FROM Usuarios " +
                                        "INNER JOIN Notas ON Usuarios.DNI = Notas.DNI_Alumno " +
-                                       "WHERE Usuarios.DNI = @DNI_Usuario"; // Modificamos la condición aquí
+                                       "WHERE Usuarios.DNI_Administrador = @DNI_Administrador";
 
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
-                            command.Parameters.AddWithValue("@DNI_Usuario", DniUsuario); // Cambiamos el parámetro
+                            command.Parameters.AddWithValue("@DNI_Administrador", DniUsuario);
 
                             DataSet dataSet = new DataSet();
                             SqlDataAdapter adapter = new SqlDataAdapter(command);
                             adapter.Fill(dataSet);
 
-                            dataGridView1.DataSource = dataSet.Tables[0];
+                            if (dataSet.Tables[0].Rows.Count > 0)
+                            {
+                                dataGridView1.DataSource = dataSet.Tables[0];
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontraron datos para el administrador actual");
+                            }
                         }
                     }
                 }
@@ -88,7 +95,7 @@ namespace sistema_alumnos
             }
             else
             {
-                MessageBox.Show("Por favor, ingrese un DNI válido antes de buscar datos.");
+                MessageBox.Show("Por favor, inicia sesión como administrador antes de ver los datos.");
             }
         }
 
@@ -168,32 +175,70 @@ namespace sistema_alumnos
             }
         }
 
-            private void button4_Click(object sender, EventArgs e)//VER TODO 
+        private void button4_Click(object sender, EventArgs e)
         {
-            try
+            string dniUsuarioFiltrar = textBox2.Text;
+
+            if (!string.IsNullOrEmpty(DniUsuario))
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                if (!string.IsNullOrEmpty(dniUsuarioFiltrar))
                 {
-                    connection.Open();
-
-                    string query = "SELECT Usuarios.Nombre, Notas.Matematica, Notas.Comunicacion, Notas.Ingles, Notas.Fisica, Notas.Quimica, Notas.Algebra, Notas.Promedio_Final " +
-                                   "FROM Usuarios " +
-                                   "INNER JOIN Notas ON Usuarios.DNI = Notas.DNI_Alumno";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    try
                     {
-                        DataSet dataSet = new DataSet();
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        adapter.Fill(dataSet);
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            connection.Open();
 
-                        dataGridView1.DataSource = dataSet.Tables[0];
+                            string query = "SELECT Usuarios.Nombre, Notas.Matematica, Notas.Comunicacion, Notas.Ingles, Notas.Fisica, Notas.Quimica, Notas.Algebra, Notas.Promedio_Final " +
+                                           "FROM Usuarios " +
+                                           "INNER JOIN Notas ON Usuarios.DNI = Notas.DNI_Alumno " +
+                                           "WHERE Usuarios.DNI_Administrador = @DNI_Administrador AND Usuarios.DNI = @DNI_Usuario";
+
+                            using (SqlCommand command = new SqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@DNI_Administrador", DniUsuario);
+                                command.Parameters.AddWithValue("@DNI_Usuario", dniUsuarioFiltrar);
+
+                                DataSet dataSet = new DataSet();
+                                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                                adapter.Fill(dataSet);
+
+                                if (dataSet.Tables[0].Rows.Count > 0)
+                                {
+                                    dataGridView1.DataSource = dataSet.Tables[0];
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontraron datos para el usuario específico.");
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al cargar los datos: " + ex.Message);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Por favor, ingresa el DNI del usuario para filtrar los datos.");
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error al cargar los datos: " + ex.Message);
+                MessageBox.Show("Por favor, inicia sesión como administrador antes de filtrar los datos.");
             }
+        }
+
+
+        private void label3_Click(object sender, EventArgs e)//DNI USUARIO
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)//OBTENER DNI USUARIO
+        {
+
         }
     }
 }

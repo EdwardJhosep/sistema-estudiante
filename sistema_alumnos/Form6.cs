@@ -65,7 +65,7 @@ namespace sistema_alumnos
         {
 
             // Mostrar el DNI almacenado en el Label cuando se haga clic en el botón.
-            label3.Text = " " + DniUsuario;
+            label3.Text = "USUARIO CONFIRMADO" + DniUsuario;
 
 
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace sistema_alumnos
 {
     public partial class Form9 : Form
     {
+        private string DniProfesor;
         public Form9()
         {
             InitializeComponent();
@@ -30,55 +32,66 @@ namespace sistema_alumnos
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//GUARDAR NOTAS 
         {
+            try
             {
-                // Crear una aplicación Excel
-                Excel.Application excelApp = new Excel.Application();
-                excelApp.Visible = true; // Esto mostrará la aplicación Excel
+                // Obtén el DataTable del DataGridView (esto contiene los datos mostrados en el DataGridView)
+                DataTable dataTable = (DataTable)dataGridView1.DataSource;
 
-                // Agregar un nuevo libro
-                Excel.Workbook workbook = excelApp.Workbooks.Add();
-                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1]; // Hoja de cálculo activa
+                // Define la cadena de conexión a la base de datos
+                string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
 
-                // Encabezados de las columnas
-                worksheet.Cells[1, 1] = "Usuario";
-                worksheet.Cells[1, 2] = "Comportamiento";
-                worksheet.Cells[1, 3] = "Matemáticas";
-                worksheet.Cells[1, 4] = "Comunicación";
-                worksheet.Cells[1, 5] = "Inglés";
-                worksheet.Cells[1, 6] = "Álgebra";
-                worksheet.Cells[1, 7] = "Física";
-                worksheet.Cells[1, 8] = "Química";
-
-                // Obtener los datos del DataGridView
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    connection.Open();
+
+                    // Itera a través de las filas del DataTable para guardar los cambios en las notas
+                    foreach (DataRow row in dataTable.Rows)
                     {
-                        if (dataGridView1.Rows[i].Cells[j].Value != null)
+                        // Obtén el ID del alumno y las nuevas notas desde el DataTable
+                        int alumnoID = Convert.ToInt32(row["ID"]);
+                        decimal matematica = Convert.ToDecimal(row["Matematica"]);
+                        decimal comunicacion = Convert.ToDecimal(row["Comunicacion"]);
+                        decimal ingles = Convert.ToDecimal(row["Ingles"]);
+                        decimal fisica = Convert.ToDecimal(row["Fisica"]);
+                        decimal quimica = Convert.ToDecimal(row["Quimica"]);
+                        decimal algebra = Convert.ToDecimal(row["Algebra"]);
+                        decimal promedioFinal = Convert.ToDecimal(row["Promedio_Final"]);
+
+                        // Define la consulta SQL para actualizar las notas del alumno
+                        string updateQuery = "UPDATE Alumnos SET " +
+                                             "Matematica = @Matematica, " +
+                                             "Comunicacion = @Comunicacion, " +
+                                             "Ingles = @Ingles, " +
+                                             "Fisica = @Fisica, " +
+                                             "Quimica = @Quimica, " +
+                                             "Algebra = @Algebra, " +
+                                             "Promedio_Final = @PromedioFinal " +
+                                             "WHERE ID = @AlumnoID";
+
+                        using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
                         {
-                            worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
-                        }
-                        else
-                        {
-                            // Manejar el caso en el que la celda sea nula (por ejemplo, asignar un valor predeterminado)
-                            worksheet.Cells[i + 2, j + 1] = "ERROR ";
+                            updateCommand.Parameters.AddWithValue("@Matematica", matematica);
+                            updateCommand.Parameters.AddWithValue("@Comunicacion", comunicacion);
+                            updateCommand.Parameters.AddWithValue("@Ingles", ingles);
+                            updateCommand.Parameters.AddWithValue("@Fisica", fisica);
+                            updateCommand.Parameters.AddWithValue("@Quimica", quimica);
+                            updateCommand.Parameters.AddWithValue("@Algebra", algebra);
+                            updateCommand.Parameters.AddWithValue("@PromedioFinal", promedioFinal);
+                            updateCommand.Parameters.AddWithValue("@AlumnoID", alumnoID);
+
+                            // Ejecuta la consulta de actualización
+                            updateCommand.ExecuteNonQuery();
                         }
                     }
+
+                    MessageBox.Show("Cambios en las notas guardados exitosamente.");
                 }
-
-
-                // Guardar el archivo Excel en una ubicación deseada
-                workbook.SaveAs(@"C:\Users\Administrador\source\TuArchivo.xlsx");
-
-                // Cerrar la aplicación Excel
-                excelApp.Quit();
-
-                // Liberar recursos
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar cambios en las notas: " + ex.Message);
             }
         }
 
@@ -96,7 +109,49 @@ namespace sistema_alumnos
         {
 
         }
+        private void Form9_Load(object sender, EventArgs e)
+        {
+            // Llena el DataGridView con los datos de los alumnos del profesor
+            CargarAlumnosDelProfesor();
+        }
+        private void CargarAlumnosDelProfesor()
+        {
+            try
+            {
+                // Define la conexión y la consulta SQL para cargar los datos de los alumnos del profesor
+                string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
+                string query = "SELECT Alumnos.Nombre AS NombreAlumno, " +
+                               "Alumnos.Matematica, " +
+                               "Alumnos.Comunicacion, " +
+                               "Alumnos.Ingles, " +
+                               "Alumnos.Fisica, " +
+                               "Alumnos.Quimica, " +
+                               "Alumnos.Algebra, " +
+                               "Alumnos.Promedio_Final " +
+                               "FROM Alumnos " +
+                               "WHERE Alumnos.DNI_Profesor = @DNI_Profesor";
 
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@DNI_Profesor", DniProfesor);
+
+                        DataSet dataSet = new DataSet();
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        adapter.Fill(dataSet);
+
+                        dataGridView1.DataSource = dataSet.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos de los alumnos: " + ex.Message);
+            }
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 

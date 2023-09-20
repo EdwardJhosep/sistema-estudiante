@@ -115,7 +115,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(433, 46);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ACTUALIZAR DATOS";
+            this.label1.Text = "ACTUALIZAR NOTAS";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form9
