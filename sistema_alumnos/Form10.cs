@@ -100,5 +100,33 @@ namespace sistema_alumnos
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)//VER TODO 
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT Usuarios.Nombre, Notas.Matematica, Notas.Comunicacion, Notas.Ingles, Notas.Fisica, Notas.Quimica, Notas.Algebra, Notas.Promedio_Final " +
+                                   "FROM Usuarios " +
+                                   "INNER JOIN Notas ON Usuarios.DNI = Notas.DNI_Alumno";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        DataSet dataSet = new DataSet();
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        adapter.Fill(dataSet);
+
+                        dataGridView1.DataSource = dataSet.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: " + ex.Message);
+            }
+        }
     }
 }
