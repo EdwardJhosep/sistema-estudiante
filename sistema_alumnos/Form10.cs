@@ -2,12 +2,14 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace sistema_alumnos
 {
     public partial class Form10 : Form
     {
         private string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
+        private int exportCount = 1; // Contador para generar nombres únicos
         public string DniUsuario { get; set; }
 
         public Form10()
@@ -98,10 +100,75 @@ namespace sistema_alumnos
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                try
+                {
+                    // Crear una nueva instancia de Excel
+                    Excel.Application excelApp = new Excel.Application();
+                    excelApp.Visible = true;
+                    Excel.Workbook workbook = excelApp.Workbooks.Add(Type.Missing);
+                    Excel.Worksheet worksheet = (Excel.Worksheet)workbook.ActiveSheet;
 
+                    // Encabezados de columnas
+                    for (int i = 1; i <= dataGridView1.Columns.Count; i++)
+                    {
+                        worksheet.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+                    }
+
+                    // Datos de filas
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                        {
+                            worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+
+                    // Generar un nombre de archivo único usando el contador
+                    string fileName = $"ExportedData_{exportCount}.xlsx";
+                    exportCount++; // Incrementar el contador para el próximo archivo
+
+                    // Guardar el archivo de Excel
+                    workbook.SaveAs(fileName);
+
+                    excelApp.Quit();
+                    releaseObject(worksheet);
+                    releaseObject(workbook);
+                    releaseObject(excelApp);
+
+                    MessageBox.Show($"Datos exportados exitosamente a {fileName}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al exportar a Excel: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay datos para exportar.");
+            }
         }
 
-        private void button4_Click(object sender, EventArgs e)//VER TODO 
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Error al liberar el objeto: " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
+            private void button4_Click(object sender, EventArgs e)//VER TODO 
         {
             try
             {
