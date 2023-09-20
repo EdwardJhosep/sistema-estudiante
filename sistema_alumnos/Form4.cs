@@ -13,6 +13,9 @@ namespace sistema_alumnos
 {
     public partial class Form4 : Form
     {
+        public string DniUsuario { get; set; }
+
+
         public Form4()
         {
             InitializeComponent();
@@ -29,7 +32,7 @@ namespace sistema_alumnos
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)//boton ingresar
+        private void button1_Click(object sender, EventArgs e)
         {
             string dni = textBox1.Text;
             string contraseña = textBox2.Text;
@@ -63,18 +66,12 @@ namespace sistema_alumnos
 
                         if (adminCount > 0)
                         {
-                            if (dni == "2001")
-                            {
-                                // El DNI es igual a 2001; redirige a Form6.
-                                Form7 form7 = new Form7();
-                                form7.Show();
-                            }
-                            else
-                            {
-                                // Las credenciales son válidas; puedes redirigir al administrador a la página de bienvenida (Form7).
-                                Form6 form6 = new Form6();
-                                form6.Show();
-                            }
+                            // Asigna el valor del DNI ingresado a la propiedad DniUsuario en Form6.
+                            Form6 form6 = new Form6();
+                            form6.DniUsuario = dni;
+
+                            // Muestra Form6 y oculta Form4.
+                            form6.Show();
                             this.Hide();
                         }
                         else
@@ -89,6 +86,8 @@ namespace sistema_alumnos
                 }
             }
         }
+
+
 
 
         private void label1_Click(object sender, EventArgs e)//titulo

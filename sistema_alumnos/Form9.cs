@@ -21,7 +21,7 @@ namespace sistema_alumnos
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form7 registerForm = new Form7();
+            Form6 registerForm = new Form6();
 
             // Mostrar el formulario RegisterForm.
             registerForm.Show();
@@ -108,6 +108,11 @@ namespace sistema_alumnos
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)//Agregamos un control gráfico
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
