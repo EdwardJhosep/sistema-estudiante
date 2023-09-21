@@ -51,7 +51,7 @@ namespace sistema_alumnos
 
         private void textBox1_TextChanged(object sender, EventArgs e)//RESIVE EL ADMINISTRADOR-DNI
         {
-    
+            DniUsuario = textBox1.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace sistema_alumnos
             }
             else
             {
-                MessageBox.Show("Por favor, inicia sesión como administrador antes de ver los datos.");
+                MessageBox.Show("Por favor, inicia ingrese su dni  administrador antes de ver los datos.");
             }
         }
 

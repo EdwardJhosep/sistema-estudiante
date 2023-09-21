@@ -117,7 +117,7 @@ namespace sistema_alumnos
 
         private void textBox2_TextChanged(object sender, EventArgs e)//contraseña
         {
-
+            textBox2.PasswordChar = '*';
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

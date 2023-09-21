@@ -88,7 +88,7 @@ namespace sistema_alumnos
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
+            textBox2.PasswordChar = '*';
         }
 
         private void label2_Click(object sender, EventArgs e)//label dni

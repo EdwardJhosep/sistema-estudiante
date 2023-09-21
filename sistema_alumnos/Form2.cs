@@ -46,7 +46,7 @@ namespace sistema_alumnos
 
         private void textBox3_TextChanged(object sender, EventArgs e)//RESIVE CONTRASEÑA
         {
-
+            textBox2.PasswordChar = '*';
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)//GRUPO
