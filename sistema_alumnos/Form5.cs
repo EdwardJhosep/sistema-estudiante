@@ -8,7 +8,8 @@ namespace sistema_alumnos
     public partial class Form5 : Form
     {
         private string nombreUsuario;
-        private string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
+        string connectionString = "Data Source=localhost;Initial Catalog=SISTEMA;Integrated Security=True";
+
 
         public Form5()
         {

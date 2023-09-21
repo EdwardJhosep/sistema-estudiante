@@ -12,6 +12,8 @@ namespace sistema_alumnos
 {
     public partial class Form7 : Form
     {
+        public string DniUsuario { get; set; }
+
         public Form7()
         {
             InitializeComponent();
@@ -50,7 +52,9 @@ namespace sistema_alumnos
             this.Hide();
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
-       
+        }
     }
 }

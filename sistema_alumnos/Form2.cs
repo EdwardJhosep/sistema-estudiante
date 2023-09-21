@@ -81,7 +81,8 @@ namespace sistema_alumnos
             int.TryParse(textBox9.Text, out dniAdministrador); // Handle invalid input
 
             // Define the connection string to the SQL Server database.
-            string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
+            string connectionString = "Data Source=localhost;Initial Catalog=SISTEMA;Integrated Security=True";
+
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

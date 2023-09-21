@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    
+    <configSections>
+    </configSections>
+    <connectionStrings>
+        <add name="sistema_alumnos.Properties.Settings.SISTEMAConnectionString"
+            connectionString="Data Source=EDWARDPC\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True"
+            providerName="System.Data.SqlClient" />
+    </connectionStrings>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+    </startup>
+</configuration>

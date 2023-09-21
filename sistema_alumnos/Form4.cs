@@ -45,7 +45,7 @@ namespace sistema_alumnos
             }
 
             // Define la cadena de conexión a la base de datos SQL Server.
-            string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
+            string connectionString = "Data Source=localhost;Initial Catalog=SISTEMA;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -66,12 +66,22 @@ namespace sistema_alumnos
 
                         if (adminCount > 0)
                         {
-                            // Asigna el valor del DNI ingresado a la propiedad DniUsuario en Form6.
-                            Form6 form6 = new Form6();
-                            form6.DniUsuario = dni;
+                            if (dni == "87654321")
+                            {
+                                // Si el DNI es "87654321", abre otro formulario (en este caso, Form6).
+                                Form7 form7 = new Form7();
+                                form7.DniUsuario = dni;
+                                form7.Show();
+                            }
+                            else
+                            {
+                                // Abre el formulario Form4 por defecto.
+                                Form6 form6 = new Form6();
+                                form6.DniUsuario = dni;
+                                form6.Show();
+                            }
 
-                            // Muestra Form6 y oculta Form4.
-                            form6.Show();
+                            // Oculta el formulario actual.
                             this.Hide();
                         }
                         else

@@ -52,7 +52,7 @@ namespace sistema_alumnos
             string correo = textBox4.Text;
 
             // Create a connection string
-            string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
+            string connectionString = "Data Source=localhost;Initial Catalog=SISTEMA;Integrated Security=True";
 
             // Define the SQL query for inserting data into the Administradores table
             string insertQuery = "INSERT INTO Administradores (DNI, Usuario, Contraseña, CorreoElectronico) " +

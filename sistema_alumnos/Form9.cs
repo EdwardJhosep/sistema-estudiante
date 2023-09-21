@@ -17,7 +17,8 @@ namespace sistema_alumnos
     {
         private DataSet dataSet = new DataSet();
 
-        private string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
+        string connectionString = "Data Source=localhost;Initial Catalog=SISTEMA;Integrated Security=True";
+
         public string DniUsuario { get; set; }
         public Form9()
         {

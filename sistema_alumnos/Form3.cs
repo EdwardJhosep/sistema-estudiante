@@ -44,7 +44,8 @@ namespace sistema_alumnos
             }
 
             // Define la cadena de conexión a la base de datos SQL Server.
-            string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
+            string connectionString = "Data Source=localhost;Initial Catalog=SISTEMA;Integrated Security=True";
+
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

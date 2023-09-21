@@ -8,7 +8,8 @@ namespace sistema_alumnos
 {
     public partial class Form10 : Form
     {
-        private string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=SISTEMA;Integrated Security=True";
+        string connectionString = "Data Source=localhost;Initial Catalog=SISTEMA;Integrated Security=True";
+
         private int exportCount = 1; // Contador para generar nombres únicos
         public string DniUsuario { get; set; }
 
