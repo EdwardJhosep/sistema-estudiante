@@ -84,9 +84,11 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(620, 288);
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Location = new System.Drawing.Point(640, 286);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(149, 23);
+            this.button4.Size = new System.Drawing.Size(102, 30);
             this.button4.TabIndex = 6;
             this.button4.Text = "SALIR";
             this.button4.UseVisualStyleBackColor = true;

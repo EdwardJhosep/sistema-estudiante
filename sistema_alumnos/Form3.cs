@@ -114,5 +114,9 @@ namespace sistema_alumnos
             textBox2.PasswordChar = '*';
         }
 
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
